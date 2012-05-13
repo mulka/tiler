@@ -1,0 +1,23 @@
+Gmap Uploader takes a single image, and creates tiles for use in the Google Maps interface.
+
+Gmap Uploader is available as a web service here:
+http://gmapuploader.com
+
+For those that don't want to use the web service, the main code behind Gmap Uploader is open sourced here. The tiler is what actually does the work of splitting up the image.
+
+The tiler requires VIPS:
+http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS
+
+After installing VIPS, run make to compile the tile program.
+The tile program uses a VIPS file called image.v. So, you'll need to convert your file to the VIPS file format first.
+
+Usage for different file formts:
+vips im_jpeg2vips image.jpg image.v
+./tile jpg
+
+vips im_png2vips image.png image.v
+./tile png
+
+vips im_magick2vips image.gif image.v
+./tile gif
+
